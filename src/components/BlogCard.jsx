@@ -1,4 +1,4 @@
-import "../styles/blog-card.css"
+import "../styles/components/blog-card.css"
 
 export default function BlogCard({ img, title, description, author, date, readTime, category, onClick, showButton = true }) {
     return (

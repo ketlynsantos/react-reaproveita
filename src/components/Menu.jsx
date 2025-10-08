@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Link, useLocation } from "react-router-dom"
-import "../styles/menu.css"
+import "../styles/components/menu.css"
 
 export default function Menu() {
     const [open, setOpen] = useState(false)

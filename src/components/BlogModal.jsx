@@ -1,4 +1,4 @@
-import "../styles/blog-modal.css"
+import "../styles/components/blog-modal.css"
 
 export default function BlogModal({ post, onClose }) {
   return (

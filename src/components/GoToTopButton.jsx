@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import "../styles/go-to-top-button.css"
+import "../styles/components/go-to-top-button.css"
 
 export default function GoToTopButton() {
     const [visible, setVisible] = useState(false)
