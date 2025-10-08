@@ -53,6 +53,7 @@ export default function BlogCarousel() {
                                 date={post.date}
                                 readTime={post.readTime}
                                 category={post.category}
+                                showButton={false}
                             />
                         ))}
                     </div>

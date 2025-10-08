@@ -1,6 +1,6 @@
 import "../styles/blog-card.css"
 
-export default function BlogCard({ img, title, description, author, date, readTime, category, onClick }) {
+export default function BlogCard({ img, title, description, author, date, readTime, category, onClick, showButton = true }) {
     return (
         <div className="blog-card">
             <img src={img} alt={title} />
@@ -11,7 +11,9 @@ export default function BlogCard({ img, title, description, author, date, readTi
                 </div>
                 <h3 className="blog-title">{title}</h3>
                 <p className="blog-description">{description}</p>
-                <button type="button" className="btn-read-more" onClick={onClick}>Leia Mais</button>
+                { showButton && 
+                    <button type="button" className="btn-read-more" onClick={onClick}>Leia Mais</button>
+                }
             </div>
         </div>
     )
