@@ -7,12 +7,13 @@ import AboutUs from './pages/AboutUs'
 import WhereWe from './pages/WhereWe'
 import Blog from './pages/Blog'
 import Contact from './pages/Contact'
+import GoToTopButton from './components/GoToTopButton'
 
 function App() {
-
   return (
     <BrowserRouter>
       <Menu />
+      <GoToTopButton />
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/sobre-nos' element={<AboutUs />}/>
