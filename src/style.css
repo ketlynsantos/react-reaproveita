@@ -1,0 +1,448 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --red-500: #d13d2e;
+  --orange-700: #ef7a37;
+  --orange-500: #f28a14;
+  --orange-100: #f6ead4;
+  --yellow-500: #ffb027;
+  --yellow-100: #ffc561;
+  --green-800: #112a20;
+  --green-700: #1b4332;
+  --green-300: #1e3f32;
+  --gray-300: #d9d9d9;
+  --gray-200: #d1d5db;
+  --gray-100: #f9f9ed;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  outline: none;
+}
+
+.wd-80 {
+  width: 80%;
+}
+
+.wd-50 {
+  width: 50%;
+}
+
+.pd-20 {
+  padding: 20px;
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+.two-column {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 32px;
+  box-sizing: border-box;
+}
+
+.two-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.hero {
+  margin-top: 150px;
+}
+
+.bg-orange {
+  background-color: var(--orange-100);
+}
+
+.col {
+  flex: 1 1 0;
+  min-width: 280px;
+}
+
+.col-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.col-img {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.col-img img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.title {
+  font-size: 32px;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: var(--orange-500);
+  line-height: 1.1;
+}
+
+.title.big {
+  font-size: 48px;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.subtitle.red {
+  color: var(--red-500);
+}
+.subtitle.orange {
+  color: var(--orange-500);
+}
+.subtitle.yellow {
+  color: var(--yellow-500);
+}
+.subtitle.yellow-light {
+  color: var(--yellow-100);
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--green-700);
+}
+
+.btn-content {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.btn {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: 100;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn strong,
+.btn.big {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btn .btn-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.btn.green {
+  background-color: var(--green-700);
+}
+.btn.green:hover {
+  background-color: var(--green-800);
+}
+
+.btn.orange {
+  background-color: var(--orange-500);
+}
+.btn.orange:hover {
+  background-color: var(--orange-700);
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.carousel-card {
+  flex: 0 0 33%;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+.carousel-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.carousel-card h3 {
+  color: var(--orange-500);
+}
+
+.carousel-info .value {
+  font-size: 128px;
+  color: var(--green-700);
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+}
+
+.carousel-info .label {
+  font-size: 24px;
+  color: var(--green-700);
+  text-align: center;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  background: none;
+  border: none;
+  color: var(--red-500);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.carousel-btn.prev {
+  left: 40px;
+}
+
+.carousel-btn.next {
+  right: 40px;
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  opacity: 0.3;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.dots.green .dot {
+  background-color: var(--green-300);
+}
+.dots.orange .dot {
+  background-color: var(--orange-700);
+}
+
+.dot.active {
+  opacity: 1;
+  width: 72px;
+  border-radius: 20px;
+}
+
+.numbers-carousel {
+  position: relative;
+}
+
+@media screen and (max-width: 1200px) {
+  .title,
+  .subscription {
+    width: auto !important;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .title.big {
+    font-size: 38px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .btn,
+  .btn strong,
+  .btn.big {
+    font-size: 14px;
+    gap: 8px;
+  }
+
+  .carousel-card {
+    flex: 0 0 50%;
+  }
+
+  .carousel-info .value {
+    font-size: 14px;
+  }
+
+  .carousel-info .label {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .two-column {
+    gap: 16px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .title.big {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .btn img {
+    width: 16px;
+  }
+
+  .carousel-card {
+    flex: 0 0 100%;
+  }
+
+  .carousel-card img {
+    height: 200px;
+    border-radius: 6px;
+  }
+
+  .carousel-info .value {
+    font-size: 68px;
+  }
+
+  .carousel-info .label {
+    font-size: 18px;
+  }
+
+  .carousel-btn.prev {
+    left: 20px;
+  }
+
+  .carousel-btn.next {
+    right: 20px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .title,
+  .description {
+    width: 100%;
+  }
+
+  .hero .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .state .container {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+
+  .col-img img {
+    height: 300px;
+  }
+
+  .dots {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 616px) {
+  .title {
+    text-align: center;
+    font-size: 28px;
+  }
+
+  .title.big {
+    font-size: 38px;
+  }
+
+  .two-row {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel-card img {
+    height: 250px;
+  }
+
+  .btn-content {
+    flex-direction: column;
+  }
+}
