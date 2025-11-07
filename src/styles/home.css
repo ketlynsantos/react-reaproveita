@@ -107,6 +107,22 @@
   box-sizing: border-box;
 }
 
+.carousel-track .blog-card.placeholder {
+  background-color: #f4f4f4;
+  height: 320px;
+  border-radius: 12px;
+  flex: 0 0 30%;
+  margin: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
 @media screen and (max-width: 1024px) {
   /* Como funciona */
   .step {
