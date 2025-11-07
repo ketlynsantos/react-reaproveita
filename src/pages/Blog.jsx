@@ -86,7 +86,7 @@ export default function Blog() {
                                     title={post.title}
                                     description={post.description}
                                     author={post.author}
-                                    date={post.post_date}
+                                    date={new Date(post.post_date).toLocaleDateString("pt-BR")}
                                     readTime={post.read_time}
                                     category={post.category}
                                     onClick={() => setSelectedPost(post)}

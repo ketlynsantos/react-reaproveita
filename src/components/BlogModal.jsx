@@ -12,7 +12,9 @@ export default function BlogModal({ post, onClose }) {
                     <span className="blog-modal-category">{post.category}</span>
                     <h2 className="blog-modal-title">{post.title}</h2>
                     <div className="blog-modal-meta">
-                        <span>{post.author}</span> • <span>{post.date}</span> • <span>{post.readTime}</span>
+                        <span>{post.author}</span>
+                        • <span>{new Date(post.post_date).toLocaleDateString("pt-BR")}</span>
+                        • <span>{post.read_time}</span>
                     </div>
                     <div className="blog-modal-text">
                         { post.content.split('\n').map((line, i) => (
