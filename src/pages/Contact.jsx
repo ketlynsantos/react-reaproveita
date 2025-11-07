@@ -1,14 +1,17 @@
 import { useState } from "react"
 import "../styles/contact.css"
 
+const API_URL = import.meta.env.VITE_API_URL
+
 export default function Contact() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        subject: '',
         message: ''
     })
     const [errors, setErrors] = useState({})
+    const [loading, setLoading] = useState(false)
+    const [success, setSuccess] = useState(false)
 
     const validateEmail = (email) => email.includes('@') && email.includes('.')
     const validateFullName = (name) => name.trim().split(' ').length >= 2;
@@ -18,7 +21,7 @@ export default function Contact() {
         setErrors({ ...errors, [e.target.name]: '' })
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const { name, email, subject, message } = formData
         const newErrors = {}
@@ -40,11 +43,6 @@ export default function Contact() {
             isValid = false
         }
 
-        if (!subject) {
-            newErrors.subject = 'O campo assunto é obrigatório.'
-            isValid = false;
-        }
-
         if (!message) {
             newErrors.message = 'O campo mensagem é obrigatório.'
             isValid = false
@@ -61,10 +59,29 @@ export default function Contact() {
             return
         }
 
-        alert('Mensagem enviada com sucesso! Aguarde respostas no email escrito.')
-        setFormData({ name: '', email: '', subject: '', message: '' })
-        setErrors({})
-    };
+        try {
+            setLoading(true)
+            setSuccess(false)
+
+            const response = await fetch(`${API_URL}/contact`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, message })
+            })
+
+            if (!response.ok) throw new Error('Erro ao enviar formulário')
+
+            setSuccess(true)
+            setFormData({ name: '', email: '', message: '' })
+
+            setTimeout(() => setSuccess(false), 5000)
+        } catch (error) {
+            console.error('Erro ao enviar mensagem:', error)
+            alert('Ocorreu um erro ao enviar sua mensagem. Tente novamente mais tarde.')
+        } finally {
+            setLoading(false)
+        }
+    }
 
     return (
         <section className="contact pd-20">
@@ -99,6 +116,7 @@ export default function Contact() {
                                 placeholder="Nome"
                                 value={formData.name}
                                 onChange={handleChange}
+                                disabled={loading}
                             />
                             <small className="error-message">{errors.name}</small>
                         </div>
@@ -109,18 +127,9 @@ export default function Contact() {
                                 placeholder="Email"
                                 value={formData.email}
                                 onChange={handleChange}
+                                disabled={loading}
                             />
                             <small className="error-message">{errors.email}</small>
-                        </div>
-                        <div className="form-group">
-                            <input
-                                type="text"
-                                name="subject"
-                                placeholder="Assunto"
-                                value={formData.subject}
-                                onChange={handleChange}
-                            />
-                            <small className="error-message">{errors.subject}</small>
                         </div>
                         <div className="form-group">
                             <textarea
@@ -128,12 +137,19 @@ export default function Contact() {
                                 placeholder="Mensagem"
                                 value={formData.message}
                                 onChange={handleChange}
+                                disabled={loading}
                             ></textarea>
                             <small className="error-message">{errors.message}</small>
                         </div>
-                        <button className="btn green big" type="submit">
-                            Enviar
+                        <button className="btn green big" type="submit" disabled={loading}>
+                            {loading ? "Enviando..." : "Enviar"}
                         </button>
+
+                        {success && (
+                            <p className="success-message">
+                                Mensagem enviada com sucesso! Responderemos em breve.
+                            </p>
+                        )}
                     </form>
                 </div>
             </div>
