@@ -1,0 +1,146 @@
+.states-legend {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  color: var(--green-700);
+  align-items: center;
+}
+
+.states-legend li {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+}
+
+.states-legend .dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.states-legend .dot.active {
+  background-color: var(--orange-500);
+}
+
+.states-legend .dot.soon {
+  background-color: var(--orange-300);
+}
+
+.timeline-horizontal {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.timeline-horizontal::before {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--orange-500);
+  z-index: 1;
+}
+
+.timeline-step {
+  position: relative;
+  text-align: center;
+  width: 33%;
+  z-index: 2;
+}
+
+.icon-wrapper {
+  background: white;
+  border: 3px solid var(--orange-500);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+}
+
+.date {
+  font-size: 14px;
+  color: var(--orange-700);
+  font-weight: 700;
+}
+
+.timeline-card {
+  margin-top: 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+}
+
+.timeline-card h3 {
+  font-size: 18px;
+  color: var(--orange-500);
+}
+
+.timeline-card p {
+  color: var(--green-700);
+}
+
+.timeline-vertical-line {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .timeline-horizontal {
+    flex-direction: column;
+    position: relative;
+    gap: 60px;
+  }
+
+  .timeline-horizontal::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 35px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--orange-500);
+    display: block;
+  }
+
+  .timeline-step {
+    width: 100%;
+    text-align: left;
+  }
+
+  .icon-wrapper {
+    position: absolute;
+    top: 0;
+    margin: 0;
+  }
+
+  .timeline-card {
+    margin-left: 80px;
+    margin-top: 0px;
+  }
+
+  .timeline-card h3 {
+    font-size: 16px;
+  }
+
+  .timeline-card p {
+    font-size: 14px;
+  }
+
+  .date {
+    margin-left: 0;
+  }
+}
