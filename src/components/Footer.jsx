@@ -34,7 +34,7 @@ export default function Footer() {
                                     <Link to="/fale-conosco">Fale Conosco</Link>
                                 </li>
                                 <li>
-                                    <a href="https://youtu.be/EFLi6Asmv7k">Pitch Video</a>
+                                    <a href="https://youtu.be/EFLi6Asmv7k" target="_blank">Pitch Video</a>
                                 </li>
                             </ul>
                         </div>
