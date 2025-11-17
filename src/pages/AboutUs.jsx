@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import Numbers from "../components/Numbers"
+import "../styles/about-us.css"
 
 export default function AboutUs() {
     const navigate = useNavigate()
@@ -25,8 +26,9 @@ export default function AboutUs() {
                 </div>
             </section>
 
+
             {/* Seção Sobre nós */}
-            <section className="pd-20 bg-orange">
+            <section className="pd-20">
                 <div className="container two-row">
                     <h2 className="title wd-100">Sobre nós</h2>
                     <p className="description" style={{textAlign: 'center'}}>
@@ -37,6 +39,35 @@ export default function AboutUs() {
                         Agricultura Sustentável), nossa solução promove um ciclo sustentável: supermercados reduzem
                         perdas, consumidores têm acesso a alimentos mais acessíveis, e o meio ambiente agradece.
                     </p>
+                </div>
+            </section>
+
+             { /* Seção Missão, Visão e Valores */}
+            <section className="values pd-20">
+                <div className="container values-grid">
+                    <div className="value-card pd-20">
+                        <img className="value-icon" src="assets/icons/mission.png" alt="Icone de foguete"></img>
+                        <h3 className="value-title">Missão</h3>
+                        <p className="value-description">
+                            Reduzir o desperdício e conectar pessoas a alimentos acessíveis.
+                        </p>
+                    </div>
+
+                    <div className="value-card pd-20">
+                        <img className="value-icon" src="assets/icons/vision.png" alt="Icone de olho com indicador de gráfico"></img>
+                        <h3 className="value-title">Visão</h3>
+                        <p className="value-description">
+                            Ser a principal plataforma de reaproveitamento alimentar do Brasil.
+                        </p>
+                    </div>
+
+                    <div className="value-card pd-20">
+                        <img className="value-icon" src="assets/icons/values.png" alt="Diamante"></img>
+                        <h3 className="value-title">Valores</h3>
+                        <p className="value-description">
+                            Sustentabilidade, inclusão e impacto social.
+                        </p>
+                    </div>
                 </div>
             </section>
 
