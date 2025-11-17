@@ -12,8 +12,7 @@ O site institucional foi desenvolvido como parte de um trabalho acadêmico da FI
 - Informar como o app conecta mercados e consumidores.
 - Incentivar o consumo consciente e a redução do desperdício de alimentos.
 - Criar uma interface moderna e interativa utilizando React.
-
-⚠️ Importante: Este site é apenas informativo e não possui integração com bancos de dados ou funcionalidades de compra/venda.
+- Exibir conteúdo dinâmico vindo de uma API externa (blog e formulário de contato).
 
 ## Tecnologias Utilizadas
 
@@ -21,17 +20,62 @@ O site institucional foi desenvolvido como parte de um trabalho acadêmico da FI
 - JavaScript / JSX
 - CSS3 / Flexbox / Grid
 - React Router
+- Fetch API / HTTP
 - Componentes reutilizáveis (Cards, Botões, Modal)
 
 # Funcionalidades do Site
+### Navegação entre páginas
+Com React Router e rotas organizadas.
 
-- Navegação entre páginas:
-- Blog funcional com busca e filtro por categorias
-- Modal de posts para exibir conteúdo completo do blog
-- Formulário de contato com validação de campos
-- Botão “Go to Top” para fácil navegação (nova funcionalidade)
-- Categorias filtráveis no blog (nova funcionalidade)
-- Layout responsivo para desktop, tablet e mobile
+### Blog com API integrada
+- Busca real na API `/blog`
+- Busca por texto
+- Filtro por categorias
+- Modal de post com conteúdo completo
+- Tratamento de loading e erro
+- Dados atualizados em tempo real
+
+### Formulário de contato (API integrada)
+- Validação de campos
+- Envio via `POST` para a API
+- Mensagens de sucesso e erro
+- Registro salvo no banco de dados
+
+### Página inicial interativa
+- Seções que levam para outras páginas
+- Carrosséis dos nossos números
+- Sessão "Como usar o app" com passo a passo
+- Carrossel de posts vindo da API
+
+### Página Quem Somos
+- Header ilustrativo
+- Missão, visão e valores
+- Nossos números
+
+### Página Onde Estamos
+- Mapa mostrando onde estamos presentes (SP)
+- Estados onde estaremos em breve (MG e RJ)
+- Timeline de expansão
+- Botão para acesso à página de contato
+
+### Novas funcionalidades adicionadas
+- Botão **“Go to Top”**
+- Categorias filtráveis no blog
+- Layout ainda mais responsivo
+- Integração configurável via `.env`
+- Estado de carregamento e feedback para API lenta
+- Mensagens amigáveis para falhas de rede
+
+## Configuração do `.env`
+Agora o projeto utiliza variáveis de ambiente para definir o endereço da API.
+Crie o arquivo **`.env`** na raiz do projeto e adicione:
+```
+VITE_API_BASE_URL=https://sua-api.com
+```
+Uso no código:
+```jsx
+const API_URL = import.meta.env.VITE_API_BASE_URL;
+```
 
 ## Como executar
 1. **Clone o repositório:**
