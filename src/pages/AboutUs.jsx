@@ -13,7 +13,8 @@ export default function AboutUs() {
                     <div className="col col-text">
                         <h1 className="title wd-80">Transformando desperdício em oportunidade</h1>
                         <p className="description wd-80">
-                            Conectamos supermercados e consumidores para evitar perdas e gerar impacto
+                            Conectamos supermercados e consumidores para evitar perdas, gerar
+                            economia e criar impacto real na redução do desperdício alimentar.
                         </p>
                         <button className="btn green big" type="button" onClick={() => navigate('/fale-conosco')}>Fale conosco</button>
                     </div>
@@ -49,7 +50,8 @@ export default function AboutUs() {
                         <img className="value-icon" src="assets/icons/mission.png" alt="Icone de foguete"></img>
                         <h3 className="value-title">Missão</h3>
                         <p className="value-description">
-                            Reduzir o desperdício e conectar pessoas a alimentos acessíveis.
+                            Reduzir o desperdício e conectar pessoas a alimentos acessíveis, promovendo uma
+                            cadeia de consumo mais justa e sustentável.
                         </p>
                     </div>
 
@@ -57,7 +59,8 @@ export default function AboutUs() {
                         <img className="value-icon" src="assets/icons/vision.png" alt="Icone de olho com indicador de gráfico"></img>
                         <h3 className="value-title">Visão</h3>
                         <p className="value-description">
-                            Ser a principal plataforma de reaproveitamento alimentar do Brasil.
+                            Ser a principal plataforma de reaproveitamento alimentar do Brasil, liderando a
+                            transformação para um futuro com menos perdas e mais consciência social.
                         </p>
                     </div>
 
@@ -65,7 +68,8 @@ export default function AboutUs() {
                         <img className="value-icon" src="assets/icons/values.png" alt="Diamante"></img>
                         <h3 className="value-title">Valores</h3>
                         <p className="value-description">
-                            Sustentabilidade, inclusão e impacto social.
+                            <strong>Sustentabilidade, inclusão, impacto social e responsabilidade compartilhada.</strong>
+                            Acreditamos que pequenas ações, quando conectadas, geram grandes mudanças.
                         </p>
                     </div>
                 </div>
